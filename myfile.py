@@ -8,7 +8,6 @@
 
 # print(fact)
 
-
 # ? reverce a number using loop
 # number = 123456789456123
 # reverce_number = ""
@@ -16,7 +15,6 @@
 #     reverce_number = i + reverce_number
 
 # print(reverce_number)
-
 
 # number = 123400056
 # print(len(str(number)))
