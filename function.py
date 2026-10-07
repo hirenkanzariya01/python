@@ -32,5 +32,6 @@
 # def get_pr(pr_amount , pr_value):
 #   return pr_amount * pr_value / 100
 
-# a = get_pr(5800, 12)
+# a = get_pr(10000, 12)
 # print(a)
+
