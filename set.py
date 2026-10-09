@@ -51,3 +51,13 @@ s = {
 # print(s4)
 
 
+# ? clear()
+# print(s)
+# s.clear()
+# print(s)
+
+
+a = {1, 2, 3, 4, 5}
+b = {4, 5, 6, 7, 8}
+
+print(b.symmetric_difference(a))
