@@ -34,20 +34,25 @@ while True:
     def update_products():
         print("please provide following information for update a product ")
         p_id = int(input("Enter Product Id to Update A Product :- "))
-        new_p_name = input("Enter New Product Name :- ")
-        new_p_price = int(input("Enter New Product Purchase Price :- "))
-        new_p_s_price = int(input("Enter New Product Selling Price :- "))
-        new_p_details = input("Enter New Product Details :- ")
-        new_p_stock_quantity = int(input("Enter New Product quantity :- "))
 
-        products_data[p_id] = {
-            "id": p_id,
-            "name": new_p_name,
-            "Purchase_Price": new_p_price,
-            "Selling_Price": new_p_s_price,
-            "product_details": new_p_details,
-            "stock": new_p_stock_quantity,
-        }
+        if p_id in products_data:
+            new_p_name = input("Enter New Product Name :- ")
+            new_p_price = int(input("Enter New Product Purchase Price :- "))
+            new_p_s_price = int(input("Enter New Product Selling Price :- "))
+            new_p_details = input("Enter New Product Details :- ")
+            new_p_stock_quantity = int(input("Enter New Product quantity :- "))
+
+            products_data[p_id] = {
+                "id": p_id,
+                "name": new_p_name,
+                "Purchase_Price": new_p_price,
+                "Selling_Price": new_p_s_price,
+                "product_details": new_p_details,
+                "stock": new_p_stock_quantity,
+            }
+            print("Product Update Successfully")
+        else:
+            print("provide valid product id ")
 
         # print("1 for update name ")
         # print("2 for update p price ")
@@ -70,10 +75,50 @@ while True:
             print("Please Provide Valid Product Id ")
 
     def view_product():
-        print("View Product ")
+        print("\n" + "=" * 95)
+        print(" " * 35 + "VIEW PRODUCTS")
+        print("=" * 95)
+
+        print(
+            f"{'ID':<5}"
+            f"{'Name':<12}"
+            f"{'Purchase Price':<18}"
+            f"{'Selling Price':<18}"
+            f"{'Details':<20}"
+            f"{'Stock':<10}"
+        )
+
+        print("-" * 95)
+
+        for product in products_data:
+            print(
+                f"{products_data[product]['id']:<5}"
+                f"{products_data[product]['name']:<12}"
+                f"{products_data[product]['Purchase_Price']:<18}"
+                f"{products_data[product]['Selling_Price']:<18}"
+                f"{products_data[product]['product_details']:<20}"
+                f"{products_data[product]['stock']:<10}"
+            )
+        print("=" * 95)
 
     def get_report():
-        print("Get Report")
+        total_stock = 0
+        total_price = 0
+
+        for i in products_data:
+            total_stock = total_stock + products_data[i]["stock"]
+            total_price = (
+                total_price
+                + products_data[i]["Purchase_Price"] * products_data[i]["stock"]
+            )
+
+        print("Total Products :- ", len(products_data))
+        print("Total Sell :- ")
+        print("Total Revenue :- ")
+        print("Total stock :- ", total_stock)
+        print("Total Investment :- ", total_price)
+
+        # print(len(products_data))
 
     if choice == 1:
         add_product()
