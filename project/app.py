@@ -34,35 +34,46 @@ while True:
     def update_products():
         print("please provide following information for update a product ")
         p_id = int(input("Enter Product Id to Update A Product :- "))
-        print(products_data[p_id])
-        # new_p_name = input("Enter New Product Name :- ")
-        # new_p_price = int(input("Enter New Product Purchase Price :- "))
-        # new_p_s_price = int(input("Enter New Product Selling Price :- "))
-        # new_p_details = input("Enter New Product Details :- ")
-        # new_p_stock_quantity = int(input("Enter New Product quantity :- "))
+        new_p_name = input("Enter New Product Name :- ")
+        new_p_price = int(input("Enter New Product Purchase Price :- "))
+        new_p_s_price = int(input("Enter New Product Selling Price :- "))
+        new_p_details = input("Enter New Product Details :- ")
+        new_p_stock_quantity = int(input("Enter New Product quantity :- "))
 
-        # products_data[p_id] = {
-        #     "id": p_id,
-        #     "name": new_p_name,
-        #     "Purchase_Price": new_p_price,
-        #     "Selling_Price": new_p_s_price,
-        #     "product_details": new_p_details,
-        #     "stock": new_p_stock_quantity,
-        # }
+        products_data[p_id] = {
+            "id": p_id,
+            "name": new_p_name,
+            "Purchase_Price": new_p_price,
+            "Selling_Price": new_p_s_price,
+            "product_details": new_p_details,
+            "stock": new_p_stock_quantity,
+        }
 
-        print("1 for update name ")
-        print("2 for update p price ")
-        print("3 for update s price ")
-        print("4 for update details price ")
-        print("5 for update quantity price ")
+        # print("1 for update name ")
+        # print("2 for update p price ")
+        # print("3 for update s price ")
+        # print("4 for update details price ")
+        # print("5 for update quantity price ")
 
-        choice = int(input("Enter Your Choice:- "))
+        # choice = int(input("Enter Your Choice:- "))
 
-        if choice == 1:
-            new_p_name = input("Enter New Product Name :- ")
-            products_data[p_id]["name"] = new_p_name
-            
-        print(products_data)
+        # if choice == 1:
+        #     new_p_name = input("Enter New Product Name :- ")
+        #     products_data[p_id]["name"] = new_p_name
+
+    def delete_product():
+        p_id = int(input("Enter Product Id For Delete A product :- "))
+        if products_data[p_id]:
+            del products_data[p_id]
+            print("Product Delete Successfully ....")
+        else:
+            print("Please Provide Valid Product Id ")
+
+    def view_product():
+        print("View Product ")
+
+    def get_report():
+        print("Get Report")
 
     if choice == 1:
         add_product()
@@ -71,13 +82,13 @@ while True:
         update_products()
 
     elif choice == 3:
-        print("delete product")
+        delete_product()
 
     elif choice == 4:
-        print("View Products")
+        view_product()
 
     elif choice == 5:
-        print("Get Report")
+        get_report()
 
     else:
         print("Please Provid Valid Input ")
