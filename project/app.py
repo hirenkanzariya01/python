@@ -8,6 +8,7 @@ while True:
     print("3. for Delete Product.")
     print("4. for View All Products.")
     print("5. for Get Report.")
+    print("6. for sell report. ")
     print()
 
     choice = int(input("Enter Your Choice :- "))
@@ -28,7 +29,9 @@ while True:
             "Selling_Price": p_s_price,
             "product_details": p_details,
             "stock": p_stock_quantity,
+            "sell_product": 0,
         }
+
         print("Product Data :- ", products_data)
 
     def update_products():
@@ -41,6 +44,7 @@ while True:
             new_p_s_price = int(input("Enter New Product Selling Price :- "))
             new_p_details = input("Enter New Product Details :- ")
             new_p_stock_quantity = int(input("Enter New Product quantity :- "))
+            sell_product = int(input("Enter New sell Product quantity :- "))
 
             products_data[p_id] = {
                 "id": p_id,
@@ -49,22 +53,11 @@ while True:
                 "Selling_Price": new_p_s_price,
                 "product_details": new_p_details,
                 "stock": new_p_stock_quantity,
+                "sell_product": sell_product,
             }
             print("Product Update Successfully")
         else:
             print("provide valid product id ")
-
-        # print("1 for update name ")
-        # print("2 for update p price ")
-        # print("3 for update s price ")
-        # print("4 for update details price ")
-        # print("5 for update quantity price ")
-
-        # choice = int(input("Enter Your Choice:- "))
-
-        # if choice == 1:
-        #     new_p_name = input("Enter New Product Name :- ")
-        #     products_data[p_id]["name"] = new_p_name
 
     def delete_product():
         p_id = int(input("Enter Product Id For Delete A product :- "))
@@ -86,6 +79,7 @@ while True:
             f"{'Selling Price':<18}"
             f"{'Details':<20}"
             f"{'Stock':<10}"
+            f"{'Sell':<10}"
         )
 
         print("-" * 95)
@@ -97,28 +91,55 @@ while True:
                 f"{products_data[product]['Purchase_Price']:<18}"
                 f"{products_data[product]['Selling_Price']:<18}"
                 f"{products_data[product]['product_details']:<20}"
-                f"{products_data[product]['stock']:<10}"
+                f"{products_data[product]['stock']:<10}",
+                f"{products_data[product]['sell_product']:<10}",
             )
         print("=" * 95)
 
     def get_report():
         total_stock = 0
         total_price = 0
-
+        total_sell = 0
+        total_purchase = 0
         for i in products_data:
             total_stock = total_stock + products_data[i]["stock"]
             total_price = (
                 total_price
                 + products_data[i]["Purchase_Price"] * products_data[i]["stock"]
             )
+            total_sell = (
+                total_sell
+                + products_data[i]["Selling_Price"] * products_data[i]["sell_product"]
+            )
+            total_purchase = (
+                total_purchase
+                + products_data[i]["Purchase_Price"] * products_data[i]["sell_product"]
+            )
 
         print("Total Products :- ", len(products_data))
-        print("Total Sell :- ")
-        print("Total Revenue :- ")
+        print("Total Sell :- ", total_sell)
+        print("Total Revenue :- ", total_sell - total_purchase)
         print("Total stock :- ", total_stock)
         print("Total Investment :- ", total_price)
 
         # print(len(products_data))
+
+    def sell_report():
+        p_id = int(input("Enter Product id to Sell a Product :- "))
+        if p_id in products_data:
+            sell_count = int(input("Enter Sell Quantity :- "))
+            if products_data[p_id]["stock"] > sell_count:
+                products_data[p_id]["sell_product"] = (
+                    products_data[p_id]["sell_product"] + sell_count
+                )
+                products_data[p_id]["stock"] = products_data[p_id]["stock"] - sell_count
+            else:
+                print("Stock is  not avalible")
+
+            print(products_data)
+
+        else:
+            print("Provide Valid Product id ")
 
     if choice == 1:
         add_product()
@@ -134,6 +155,8 @@ while True:
 
     elif choice == 5:
         get_report()
+    elif choice == 6:
+        sell_report()
 
     else:
         print("Please Provid Valid Input ")
