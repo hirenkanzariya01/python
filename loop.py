@@ -1,36 +1,56 @@
-# # ? for loop
-# for i in range(100, 0, -2):
-#     print(i, end=" ")
-
 
 # ? print even number from 1 to 50
-# for i in range(1, 51):
-#   if i % 2 == 0:
-#     print(i , end=' ')
+# for a in range(1, 51):
+#     if a % 2 == 0:
+#       print(a, end='  ')
 
 
-# ? sum of number from 1 to N
-# n = int(input("Enter a Number :- "))
+# ? sum of numbers from 1 to N
+# n = 20
 # total = 0
-
 # for i in range(1, n + 1):
 #     total = total + i
-
-# print(f"Total of 1 to {n} :- ", total)
-
-# ?  Display a message “Done” after successful execution of for loop
-# n = 1
-# while  n > 0 :
-#     n += 1
-#     print("loop", n)
-
-# else:
-#     print("Done")
+# print(total)
 
 
-#  3 x 3 x 3 = 27
-
-# ? Calculate the cube of all numbers from 1 to a given number
-# n = int(input("Enter Number :- "))
+# ? find the factorial of number using loop
+# n = 5
+# fact = 1
 # for i in range(1, n + 1):
-#     print(i, "x", i, "x", i, "=", i**3)
+#     fact = fact * i
+
+# print(fact)
+
+
+# ? print a table of any number
+# N = 6
+# for i in range(1, 11):
+#     print(N , "X" , i , "=" , i * N)
+
+
+# ? loop with break
+# for i in range(1, 101):
+#     if i == 50:
+#         break
+#     print(i, end="  ")
+
+
+# ? reverce a number using loop
+# number = 123456
+# str_number = str(number)
+# rev_number = ''
+# for i in str_number:
+#   rev_number = i + rev_number
+
+# print(rev_number)
+
+
+# ? count a digit in a number using loop 
+# number = 2525
+# digits = 0
+# for i in str(number):
+#   digits += 1
+  
+# print(digits)
+
+
