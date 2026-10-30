@@ -50,6 +50,34 @@
 # print(peragraph.replace("python", "javascript"))
 
 
-name = "raju , vivek , vinay , vinod , mahesh , chaman , raghav"
-# print(name.replace("vivek", "vijay"))
-print(name.split(' , '))
+# name = "raju , vivek , vinay , vinod , mahesh , chaman , raghav"
+# # print(name.replace("vivek", "vijay"))
+# print(name.split(' , '))
+
+# ? find() & index()
+
+# peragraph = 'this is a python course'
+# print(peragraph.find('code'))
+
+
+# ? isalnum()
+# year = '1980s'
+# print(year.isalnum())
+
+# ? isdigit()
+# age = '0120'
+# print(age.isdigit())
+
+# ? isnumaric()
+# marks = 'abcd'
+# print(marks.isnumeric())
+
+# ? islower()
+# name = "rakesh"
+# print(name.islower())
+
+# ? isupper()
+# name = "RAM"
+# print(name.isupper())
+
+
