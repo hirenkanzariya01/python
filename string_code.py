@@ -81,3 +81,51 @@
 # print(name.isupper())
 
 
+# ? how to reverse a string in python
+# todo method 1
+# str = "this is a string"
+# rev = ""
+
+# for i in range(0, len(str)):
+#     rev = str[i] + rev
+
+# print(rev)
+
+# todo method 2
+# str = "this is a string"
+# rev = ""
+# for i in range(len(str) - 1, -1, -1):
+#     rev += str[i]
+
+# print(rev)
+
+
+# todo method 3
+# str2 = "this is a sreing"
+# list = []
+
+# for i in str2:
+#     list.append(i)
+
+# list.reverse()
+# print("".join(list))
+
+
+# ? how to cheack a string contain only digits ?
+# age = '150'
+# if age.isdigit():
+#   print('this string contain only digits')
+# else:
+#   print('this string can not contain digits')
+
+# ? how to cheack a string is palindrome
+# name = "nitin"
+# rev = ""
+# for i in range(0, len(name)):
+#     rev = name[i] + rev
+
+# if name == rev:
+#   print('String is palindrome')
+# else:
+#   print('String is not  palindrome')
+  
