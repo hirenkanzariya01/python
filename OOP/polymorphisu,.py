@@ -21,10 +21,8 @@ class Card_payment:
 
 def money_transition(a):
     print(a.dabit_money())
-
 def money_deposite(a):
     print(a.cradit_money())
-
 
 money_deposite(online_payment)
 
