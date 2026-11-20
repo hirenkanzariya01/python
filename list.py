@@ -1,74 +1,83 @@
-# number = [10, 20, 30, 40, 50]
-# number[1] = 22
-# number[4] = 100
+# avalible_car = ["audi", "kia", "bmw", "thar"]
 
-# del number[4]
-# del number[]
+# if 'audi' in avalible_car:
+#   print('car is avalible for selling')
+# else:
+#   print('Sorry car is not avalible right now')
 
-# print(number)
+# product_name = ["i phone 16", "vivo v 50", "iq 10r", "moto g96", "oppo k15"]
+# product_name[0] = "i phone 18"
+# product_name[-2] = 'moto edge 50'
+# print(product_name)
+# del product_name[2]
+# print(product_name)
 
 
-# for i in number:
+# product_name = ["i phone 16", "vivo v 50", "iq 10r", "moto g96", "oppo k15"]
+# for i in product_name:
 #     print(i)
 
-# number = [10, 20, 30, 40, 50, 60, 70, 80]
 
-# print(len(number))
-# print(sum(number))
-# a = '100'
+# ? list methods
+# ? len()
+fruit = ["charry", "strobery", "barry", "Apple"]
+marks = [84, 12, 57, 89, 67, 45, 78, 99, 15, 78]
+# print(len(fruit))
 
-# print(list(a))
+
+# ? max()
+# print(min(fruit))
+
+
+# ? sum()
+# print(sum(fruit))
+
+# ? list()
+# name = "hiren kanzariya"
+# print(list(name))
 
 
 # ? sorted
+# print(sorted(marks))
 
-# number = [10, 20, 50, 80, 30, 15]
-# new_number = sorted(number)
-# print(new_number)
-
-
-# ? Append
-name = ["raju", "jaimin", "amit", "ballu", "virat"]
-
-name.append("subham")
-name.append("ajay")
-# print(sorted(name))
+# ? append()
+# fruit.append("water mallon")
+# fruit.append('graps')
+# print(fruit)
 
 # ? remove()
-# name.remove('ajay')
-# print(name)
-
-# ? sort
-number = [10, 20, 30, 40, 50]
-# number.sort(reverse=True)
-# print(number)
-
-# number.reverse()
-# print(number)
+# fruit.remove("strobery")
+# print(fruit)
 
 
-# string = "vivek"
-# my_list = list(string)
-# my_list.reverse()
-# print(str(my_list))
+# ? sort()
+# marks.sort(reverse=False)
+# print(marks)
 
 
-# count()
-# l = [1, 2, 3, 4, 15, 5, 6, 7, 8, 9, 10, 1, 2, 1, 2, 1, 4, 5, 5, 3, 4, 8, 6, 10]
+# ? reverse
+# print(marks)
+# marks.reverse()
+# print(marks)
+
+# ? count()
+# print(marks.count(2))
+
+# ? index()
+# print(fruit)
+# print(fruit.index('mango'))
 
 # ? insert()
-number = [10, 20, 30, 40, 50]
-
-# number.insert(0, 1)
-# number.insert(2, 15)
-# number.append("Apple")
-# print(number)
+# fruit.insert( 3,"graps")
+# print(fruit)
 
 
-# ? pop ()
+# ? pop()
+# print(fruit)
+# fruit.pop(1)
+# print(fruit)
 
-# number.pop(3)
-# number[0] = 100
-print(number)
-number.clear()
-print(number)
+# ? clear()
+# print(fruit)
+# fruit.clear()
+# print(fruit)
